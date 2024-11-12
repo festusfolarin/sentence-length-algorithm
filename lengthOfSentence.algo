@@ -1,0 +1,25 @@
+ALGORITHM lengthOfSentence
+VAR
+    sentence : STRING;
+    numberOfCharacters, numberOfWords, numberOfVowels : INTEGER := 0;
+BEGIN
+    Read(sentence);
+    WHILE (sentence[numberOfCharacters] != ".") DO
+        IF (sentence[numberOfCharacters] = " " OR
+            sentence[numberOfCharacters] = ".") THEN
+            numberOfWords := numberOfWords + 1;
+        END_IF
+        IF (sentence[numberOfCharacters] = "a" OR 
+            sentence[numberOfCharacters] = "e" OR 
+            sentence[numberOfCharacters] = "i" OR 
+            sentence[numberOfCharacters] = "o" OR 
+            sentence[numberOfCharacters] = "u") THEN
+            numberOfVowels := numberOfVowels + 1;
+        END_IF
+        numberOfCharacters := numberOfCharacters + 1
+    END_WHILE
+
+    Write(numberOfCharacters);
+    Write(numberOfWords);
+    Write(numberOfVowels);
+END
